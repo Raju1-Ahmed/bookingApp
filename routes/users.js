@@ -16,8 +16,8 @@ const router = express.Router();
 // })
 
 router.get("/:id", verifyUser, getUser);
-router.get("/:id",verifyUser, updateUser);
-router.get("/:id",verifyUser, deleteUser);
+router.patch("/:id",verifyUser, updateUser);
+router.delete("/:id",verifyUser, deleteUser);
 router.get("/",verifyAdmin, getUsers)
 
 export default router
