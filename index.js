@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import authUsers from "./routes/users.js";
@@ -27,6 +28,7 @@ mongoose.connection.on("disconnected", () =>{
 //middlers
 app.use(cookieParser())
 app.use(express.json())
+app.use(cors());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", authUsers);
