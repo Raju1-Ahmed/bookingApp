@@ -50,3 +50,17 @@ app.listen(8800, ()=>{
     connect()
     console.log("Connected to backend!");
 })
+
+
+
+
+// {
+//   "name":"Hotel panshi",
+//   "type":"hotel",
+//   "city":"sylhet",
+//   "address":"somewhere",
+//   "distance":"500",
+//   "title":"Best hotel in city",
+//   "desc":"hotel description",
+//   "cheapestPrice":44
+//   }
