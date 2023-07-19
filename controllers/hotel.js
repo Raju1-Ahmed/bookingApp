@@ -55,25 +55,33 @@ export const getHotel = async (req, res, next) =>{
 // Below alternative code for GetHotel
 
 // Define the getHotels function
+// export const getHotels = async (req, res, next) => {
+//     const { min, max, limit, ...others } = req.query;
+//     try {
+//       const query = { ...others };
+  
+//       if (min !== undefined && max !== undefined) {
+//         query.cheapestPrice = { $gt: Number(min) || 1, $lt: Number(max) || 999 };
+//       } else if (min !== undefined) {
+//         query.cheapestPrice = { $gt: Number(min) || 1 };
+//       } else if (max !== undefined) {
+//         query.cheapestPrice = { $lt: Number(max) || 999 };
+//       }
+  
+//       const hotels = await Hotel.find(query).limit(parseInt(limit) || 7);
+//       res.status(200).json(hotels);
+//     } catch (err) {
+//       next(err);
+//     }
+//   };
 export const getHotels = async (req, res, next) => {
-    const { min, max, limit, ...others } = req.query;
-    try {
-      const query = { ...others };
-  
-      if (min !== undefined && max !== undefined) {
-        query.cheapestPrice = { $gt: Number(min) || 1, $lt: Number(max) || 999 };
-      } else if (min !== undefined) {
-        query.cheapestPrice = { $gt: Number(min) || 1 };
-      } else if (max !== undefined) {
-        query.cheapestPrice = { $lt: Number(max) || 999 };
-      }
-  
-      const hotels = await Hotel.find(query).limit(parseInt(limit) || 7);
-      res.status(200).json(hotels);
-    } catch (err) {
-      next(err);
-    }
-  };
+  try {
+    const hotels = await Hotel.find();
+    res.status(200).json(hotels);
+  } catch (err) {
+    next(err);
+  }
+};
 
 
 

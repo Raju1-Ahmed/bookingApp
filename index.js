@@ -32,7 +32,7 @@ app.use(cors());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", authUsers);
-app.use("/api/hotel", authHotels);
+app.use("/api/hotels", authHotels);
 app.use("/api/rooms", authRooms);
 
 app.use((err, req, res, next) =>{
